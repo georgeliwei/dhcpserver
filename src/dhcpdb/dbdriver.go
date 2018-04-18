@@ -16,7 +16,7 @@ type Dbdriver interface {
 	ConnectDbDriver(connectUrl string) bool
 	DisconnectDbDriver() bool
 	AddRecord(objectName string, objectValue []TobjectType) error
-	UpdateRecord(objectName string, objectValue []TobjectType) error
-	RemoveRecord(objectName string, objectValue []TobjectType) error
-	QueryRecord(objectName string, objectValue []TobjectType) (string, error)
+	UpdateRecord(objectName string, objectValue []TobjectType, opCondition []TobjectType) error
+	RemoveRecord(objectName string, opCondition []TobjectType) error
+	QueryRecord(objectName string, opCondition []TobjectType) (string, error)
 }
